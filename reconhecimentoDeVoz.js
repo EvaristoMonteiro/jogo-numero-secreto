@@ -2,11 +2,11 @@ const elementoChute = document.querySelector('#chute');
 
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 
-const recogniton = new SpeechRecognition();
-recogniton.start();
+const recognition = new SpeechRecognition();
+recognition.start();
 
-recogniton.addEventListener('result', onSpeak);
-recogniton.addEventListener('end', () => recogniton.start())
+recognition.addEventListener('result', onSpeak);
+recognition.addEventListener('end', () => recognition.start())
 
 function onSpeak(e) {
     chute = e.results[0][0].transcript;
